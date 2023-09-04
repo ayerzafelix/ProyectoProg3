@@ -1,12 +1,27 @@
 import React from 'react';
 
 function Header() {
-    return(
-        <nav>
-            <ul>
-               Estoy en AboutUs 
-            </ul>
-        </nav>
+    return (
+        <section>
+            <div>
+                <section class="barra">
+                    <form>
+                        <input type="text" id="input" placeholder="Buscar en DH Movies" class="buscador" name="search" value="" />
+
+
+                    </form>
+                </section>
+
+                <nav>
+                    <ul class="inicio">
+                        <li><a class="inicio" href="/">HOME</a></li>
+                        <li><a class="inicio" href="/Favoritos">FAVORITOS</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+        </section>
     )
 }
 

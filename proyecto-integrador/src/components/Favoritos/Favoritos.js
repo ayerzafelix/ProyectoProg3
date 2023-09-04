@@ -4,7 +4,7 @@ function Favoritos() {
     return(
         <nav>
             <ul>
-               Estoy en AboutUs 
+               Estoy en Favoritos
             </ul>
         </nav>
     )
