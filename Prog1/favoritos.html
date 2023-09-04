@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favoritos</title>
+
+    <link rel="stylesheet" href="./Home/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+
+
+        <section>
+           
+            <div>
+                <a href="./index.html" class="centro"> <img src="./Home/imagenes/logo.png" alt="" class="item logo"></a>
+                
+                <section class="barra">
+                    <form>
+                        <input type="text" id="input" placeholder="Buscar en DH Movies" class="buscador" name = "search" value = ""/>
+        
+                        <button type="submit" id="search" class="bordelupa">
+                            <img src="./Home/imagenes/lupa.png" alt="" class="lupa">
+                        </button>
+                    </form>
+                </section>
+
+                <button class="botonDark">Aclarar fondo</button>         
+                  
+                
+                <nav>
+                    <ul class="inicio">
+                        <li><a class="inicio" href="./index.html">HOME</a></li>
+                        <li><a class="inicio" href="./favoritos.html">FAVORITOS</a></li>
+                        <li><a class="inicio" href="./generos.html">GENEROS</a></li>
+                    </ul>
+                </nav>
+                
+            </div>
+    
+        </section>
+    
+    
+    </header>
+
+    
+
+
+<h2 class="titulos">FAVORITOS</h2>
+
+
+
+
+    <h2 class="ultimo" id="pelis">Tu selección de peliculas</h2>
+
+    <section class="imagen" id="seleccionPeliculas"></section>
+
+    
+
+
+    <h2 class="ultimo" id="series">Tu selección de series</h2>
+
+    <section class="imagen" id="seleccionSeries"></section>
+
+
+
+
+
+<footer>
+    <hr class="linea">
+    <a href="./index.html"> <img src="./Home/imagenes/tmbd.svg" alt="" class="logofooter"></a>
+    <h4 class="paddingtopfooter">Benjamin Simone | Santiago Roca | Felix Ayerza</h4>
+    <h4 class="paddingbottomfooter">Copyrigth Ⓒ 2022 DH Movies</h4>
+</footer>
+<script src="./js/favoritos.js"></script>
+</body>
+</html>

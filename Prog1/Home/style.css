@@ -1,0 +1,435 @@
+* {
+    margin:0;
+    padding:0;
+    font:12pt Arial;
+}
+
+li{
+    list-style-type: none;
+}
+
+.logo {
+    width: 200px;
+}
+
+
+header div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2.7% 5.5%;
+    align-items: center;
+}
+
+.arriba {
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.inicio {
+    color: white;
+    text-decoration: none;
+    transition: color .2s; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.inicio:hover {
+    color: rgb(64, 64, 64);
+}
+.inicio li {
+    padding-left: 20px;
+}
+.buscador {
+    padding: 15px;
+    padding-right: 200px;
+    background-color: rgb(21, 21, 21);
+    color: rgb(255, 254, 254);
+    border: rgb(21, 21, 21);
+}
+
+.bordelupa {
+    padding: 15px;
+    background-color: rgb(21, 21, 21);
+    color: rgb(255, 254, 254);
+    border: none
+}
+
+.lupa {
+    height: 15px;
+    width: 15px;
+}
+
+
+
+
+
+
+
+
+
+body {
+    background-color: black;
+    }
+    
+h2 {
+    color: rgb(186, 186, 186);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    
+}
+
+h5{
+    font-size: small;
+    padding-top: 4%;
+    color: rgb(186, 186, 186);
+    text-align: center;
+}
+
+h2 a {
+    color: rgb(186, 186, 186);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.ultimo {
+    padding-top: 2%;
+    padding-bottom: 1.38%;
+    padding-left: 2.7%;
+}
+
+.titulos {
+    padding-top: 2.7%;;
+    padding-bottom: 2.7%;
+    padding-left: 2.7%;
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: 3px 3px rgb(69, 69, 69);
+}
+
+.pelicula_principal {
+    display: block;
+    width: 100%;
+    padding-bottom: 2.7%;;
+}
+
+.pelicula_principal:hover {
+    filter: blur(2px);
+    transition: filter .4s;
+}
+
+.imagen{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 2.08%;
+    padding-right: 2.08%;
+    padding-bottom: 4.7%;
+    padding-top: 1.5%;
+}
+
+.peliculas:hover {
+    transform: scale(1.05); 
+}
+
+.peliculas {
+    height: 350px;
+    width: 250px;
+    transition: transform .2s; 
+    border-radius: 10px;
+    box-shadow: 0 0 50px black
+}
+
+
+
+
+
+
+
+
+
+h4 {
+    color: rgb(186, 186, 186);
+    text-align: center;
+}
+
+.logofooter {
+    
+    width: 13.8%;
+    display: block;
+    padding-top: 2%;
+    margin: auto;
+	display:block;
+}
+
+.paddingtopfooter {
+    padding-top: 1%;
+}
+
+.paddingbottomfooter {
+    padding-bottom: 2.7%;
+}
+
+
+
+
+
+
+h1 {
+    font-size: 60px;
+    color: rgb(186, 186, 186);
+    padding-left: 2.7%;
+}
+
+.trailer {
+    display: flex;
+    flex-wrap: wrap;
+    flex: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 4.38%;
+    padding-top: 1.5%;
+}
+
+.detalle {
+    text-align: center;
+    padding-top: 3.5%;
+    padding-bottom: 1.38%;
+}
+
+.sinopsis {
+    text-align: center;
+    padding-left: 17.36%;
+    padding-right: 17.36%;
+    padding-bottom: 2.7%;
+}
+
+.detallegenero {
+    text-align: center;
+    padding-bottom: 5%;
+    padding-left: 17.36%;
+    padding-right: 17.36%;
+
+}
+
+.linea {
+    border-color: rgb(69, 68, 68);
+}
+
+.detallepeliculas {
+    padding-bottom: 1.38%;
+}
+
+
+
+
+
+
+
+
+
+
+
+.imagenPeliculaDetalle{
+    border: 1px solid rgb(186, 186, 186);
+    height: 350px;
+    width: 250px;
+    float: left;
+}
+
+.tituloPeliculaDetalle{
+    padding-left: 2.7%;
+    padding-right: 2.08%;
+    padding-bottom: 2.7%;
+    padding-top: 1.5%;
+}
+
+.calificacionPeliculaDetalle{
+    padding-top: 0.5%;
+    padding-left: 20%;
+    padding-bottom: 5%;
+    text-align: left;
+}
+
+.overviewPeliculaDetalle{
+    padding-top: 1.5%;
+    padding-left: 20%;
+    padding-bottom: 2.7%;
+    text-align: left;
+
+}
+
+.plataformasPeliculaDetalle{
+    color: rgb(186, 186, 186);
+    text-align: center;
+    padding-top: 4.5%;
+}
+
+
+.plataforma{
+    display: flex;
+    justify-content: space-around;
+    padding-left: 2.08%;
+    padding-right: 2.08%;
+    padding-bottom: 2.7%;
+    padding-top: 1.5%;
+    border-radius: 10px;
+}
+
+.nombres{
+    text-decoration: none;
+}
+
+.footerpadding{
+    padding-top: 2%;
+}
+
+.toystory{
+    border: 1px solid rgb(186, 186, 186);
+}
+
+.generos{
+    font-size: x-large;
+    color: rgb(186, 186, 186);
+}
+
+.imagenes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2.7%;
+    padding-right: 2.08%;
+    padding-bottom: 4.7%;
+    padding-top: 1.5%;
+}
+
+.review{
+    padding-left: 2.7%;
+    text-align: left;
+    padding-bottom: 3%;
+}
+
+.generosDetalle{
+    color: rgb(186, 186, 186);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.titulosResultados{
+    padding-top: 2.7%;
+    padding-bottom: 2.7%;
+    padding-left: 2.7%;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: 3px 3px rgb(69 69 69);
+    padding-right: 56%;
+}
+
+.titulosDetalleGeneros{
+    padding-top: 2.7%;
+    padding-bottom: 2.7%;
+    padding-left: 2.7%;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: 3px 3px rgb(69 69 69);
+    padding-right: 81%;
+}
+
+.botonRecomendaciones{
+    background:none;
+    border:none; 
+    padding-top: 2.7%;;
+    padding-bottom: 2.7%;
+    padding-left: 2.7%;
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: 3px 3px rgb(69, 69, 69);
+    font-size: 30px;
+}
+
+
+
+@media (max-width: 420px){
+
+    header div {
+        flex-direction: column;
+    }
+
+    header li {
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    .logo {
+        align-self: center;
+        padding: 0%;
+    }
+
+    .buscador {
+        padding-right: 50px;
+    }
+
+    .bordelupa {
+        display: none;
+    }
+
+
+
+    h2 {
+        text-align: center;
+    }
+
+    .titulos {
+        font-size: 25px;
+        padding-left: 0px;
+        padding-bottom: 20px;
+    }
+
+    .pelicula_principal {
+        padding-bottom: 10%;
+    }
+
+    .ultimo {
+        padding-bottom: 5%;
+    }
+
+    .imagen {
+        flex-direction: column;
+        padding-bottom: 15%;
+        padding-top: 3%;
+    }
+
+    .peliculas {
+        width: 200px;
+        height: 120px;
+        padding: 2%;
+    }
+
+    .resultados {
+        padding-bottom: 1.38%;
+        padding-left: 2.7%;
+        font-size: 20px;
+    }
+
+    .logofooter {
+        width: 130px;
+        height: 25px;
+    }
+
+    .paddingtopfooter {
+        padding-top: 1%;
+        font-size: 13px;
+    }
+
+    .paddingbottomfooter {
+        padding-bottom: 2%;
+        font-size: 13px;
+    }
+
+
+}
