@@ -24,7 +24,7 @@ function App() {
           <Route path='/' exact={true} component={Home} />
           <Route path='/DetallePeliculas/:id' exact={true} component={DetallePeliculas} />
           <Route path='/Favoritos' exact={true} component={Favoritos} />
-          <Route path='/SearchResults' exact={true} component={SearchResults} />
+          <Route path='/SearchResults/:query' exact={true} component={SearchResults} />
           <Route path='/NotFound' exact={true} component={NotFound} />
           <Route path='/Categorias/:categoria' exact={true} component={VerTodas} />
           
