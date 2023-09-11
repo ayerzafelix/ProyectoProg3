@@ -9,7 +9,8 @@ import SearchResults from "./screens/SearchResults/SearchResults";
 import DetallePeliculas from "./screens/DetallePeliculas/DetallePeliculas";
 import NotFound from "./screens/NotFound/NotFound";
 import Favoritos from "./screens/Favoritos/Favoritos";
-
+import ListaPeliculas from "./components/ListaPeliculas/ListaPeliculas";
+import TarjetaPelicula from "./components/TarjetaPelicula/TarjetaPelicula";
 
 
 
@@ -26,6 +27,8 @@ function App() {
           <Route path='/Favoritos' exact={true} component={Favoritos} />
           <Route path='/SearchResults' exact={true} component={SearchResults} />
           <Route path='/NotFound' exact={true} component={NotFound} />
+          <Route path="/lista-peliculas" exact={true} component={ListaPeliculas} />
+          <Route path="/tarjeta-pelicula/:id" exact={true} component={TarjetaPelicula} />
         </Switch>
       </main>
       <Footer />
