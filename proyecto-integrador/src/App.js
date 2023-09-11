@@ -7,7 +7,7 @@ import Header from "./components/Header/Header";
 import Home from "./screens/Home/Home";
 import SearchResults from "./screens/SearchResults/SearchResults";
 import DetallePeliculas from "./screens/DetallePeliculas/DetallePeliculas";
-import NotFound from "./screens/NotFound/NotFound";
+import Error from "./components/Error/Error";
 import Favoritos from "./screens/Favoritos/Favoritos";
 import VerTodas from "./screens/VerTodas/VerTodas";
 
@@ -25,8 +25,8 @@ function App() {
           <Route path='/DetallePeliculas/:id' exact={true} component={DetallePeliculas} />
           <Route path='/Favoritos' exact={true} component={Favoritos} />
           <Route path='/SearchResults/:query' exact={true} component={SearchResults} />
-          <Route path='/NotFound' exact={true} component={NotFound} />
           <Route path='/Categorias/:categoria' exact={true} component={VerTodas} />
+          <Route path="" component={Error} />
           
         </Switch>
       </main>
