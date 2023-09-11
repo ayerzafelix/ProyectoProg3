@@ -1,13 +1,13 @@
 import React from 'react';
 
-function NotFound() {
+function SearchResults() {
     return(
         <nav>
             <ul>
-               Estoy en AboutUs 
+               
             </ul>
         </nav>
     )
 }
 
-export default NotFound
+export default SearchResults

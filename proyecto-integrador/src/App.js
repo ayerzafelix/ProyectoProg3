@@ -4,11 +4,12 @@ import { Route } from 'react-router-dom'
 import { Switch } from 'react-router-dom'
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import Home from "./components/Home/Home";
-import SearchResults from "./components/SearchResults/SearchResults";
-import DetallePeliculas from "./components/DetallePeliculas/DetallePeliculas";
-import NotFound from "./components/NotFound/NotFound";
-import Favoritos from "./components/Favoritos/Favoritos";
+import Home from "./screens/Home/Home";
+import SearchResults from "./screens/SearchResults/SearchResults";
+import DetallePeliculas from "./screens/DetallePeliculas/DetallePeliculas";
+import NotFound from "./screens/NotFound/NotFound";
+import Favoritos from "./screens/Favoritos/Favoritos";
+
 
 
 
@@ -23,6 +24,8 @@ function App() {
           <Route path='/' exact={true} component={Home} />
           <Route path='/DetallePeliculas' exact={true} component={DetallePeliculas} />
           <Route path='/Favoritos' exact={true} component={Favoritos} />
+          <Route path='/SearchResults' exact={true} component={SearchResults} />
+          <Route path='/NotFound' exact={true} component={NotFound} />
         </Switch>
       </main>
       <Footer />

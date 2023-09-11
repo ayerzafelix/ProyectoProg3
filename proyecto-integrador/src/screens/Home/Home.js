@@ -1,4 +1,5 @@
 import React from 'react';
+import ListaPeliculas from '../../components/ListaPeliculas/ListaPeliculas';
 function Home() {
   
     return (
@@ -11,7 +12,9 @@ function Home() {
 
                 <h2 class="ultimo">Peliculas populares</h2>
 
-                <section class="imagen" id="popularMovies"></section>
+                <section class="imagen" id="popularMovies">
+                <ListaPeliculas />
+                </section>
 
 
 
