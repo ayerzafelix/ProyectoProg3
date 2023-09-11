@@ -4,7 +4,7 @@ function Header() {
     return (
         <section>
             <div>
-                <section class="barra">
+                <section class="buscador">
                     <form>
                         <input type="text" id="input" placeholder="Buscar en DH Movies" class="buscador" name="search" value="" />
 

@@ -25,21 +25,20 @@ class ListaPeliculas extends Component {
   }
 
   render() {
-    const { peliculas } = this.state;
+    const {peliculas} = this.state;
     console.log(peliculas);
     return (
-      <div>
-        <h2>Lista de Películas</h2>
-        <div className="pelicula-lista">
-          {Array.isArray(peliculas) ? (
-            peliculas.map((pelicula) => (
-              <TarjetaPelicula key={pelicula.id} pelicula={pelicula} />
-            ))
-          ) : (
-            <p>No se han encontrado películas.</p>
-          )}
+        <div>
+          {peliculas.map(pelicula => (
+            <div>
+             key={pelicula.id}
+                  <img className="imagen" src={`https://image.tmdb.org/t/p/w500${pelicula.backdrop_path}`} alt = {pelicula.original_title} />
+                  <h3 className="titulos">{pelicula.original_title}</h3>
+                  <p className="titulos">Año: {pelicula.release_date}</p>
+                  <p className="titulos">Descripción: {pelicula.overview}</p>
+             </div>
+        ))}
         </div>
-      </div>
     );
   }
 }

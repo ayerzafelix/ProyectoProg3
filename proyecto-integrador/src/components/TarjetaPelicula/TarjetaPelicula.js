@@ -1,43 +1,76 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-class TarjetaPelicula extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      pelicula: [],
-    };
-    console.log(props);
-  }
+class TarjetaPersonaje extends Component {
 
-  componentDidMount() {
-    const peliculaId = this.props.match.params.id
-    const apiUrl = `https://api.themoviedb.org/3/movie/${peliculaId}?api_key=925f4b20191d3e6290b49bd816600eda&language=en-US`;
-    fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => { console.log(data);
-        this.setState({ pelicula: data });
-      })
-      .catch(error => {
-        console.error('Error al obtener los datos de la API:', error);
-      });
-  }
+    constructor(props){
+        super(props)
+        this.state ={
+            textoBoton: "Agregar a favoritos",
+            favoritos: []
 
-  render() {
-    const { pelicula } = this.state;
-    return (
-      <div>
-        <h2>Detalles de la Película</h2>
-        <div className="pelicula-detalle">
-          <img src={pelicula.imagen} alt={pelicula.titulo} />
-          <h3>{pelicula.titulo}</h3>
-          <p>Año: {pelicula.anio}</p>
-          <p>Director: {pelicula.director}</p>
-          <p>Descripción: {pelicula.descripcion}</p>
-        </div>
-      </div>
-    );
-  }
-  
+        } 
+    }
+
+    componentDidMount(){
+        let arrayFavoritos = [];
+        let recuperoStorage = localStorage.getItem('favoritos');
+        
+        if(recuperoStorage !== null){
+            arrayFavoritos = JSON.parse(recuperoStorage);
+
+           if(arrayFavoritos.includes(this.props.pelicula.id)){
+             this.setState({
+                 textoBoton: 'Quitar de favoritos'
+             })
+           }    
+        }
+
+    }
+
+    agregarAFavoritos(id){
+        let arrayFavoritos = []
+        let recuperoStorage = localStorage.getItem('favoritos');
+        
+        if(recuperoStorage !== null){
+           arrayFavoritos = JSON.parse(recuperoStorage);   
+        }
+           
+        if(arrayFavoritos.includes(id)){
+            arrayFavoritos = arrayFavoritos.filter( unId => unId !== id);
+
+            this.setState({
+                textoBoton: "Agregar a Favoritos"
+            })
+
+
+        } else {
+            arrayFavoritos.push(id);
+            this.setState({
+                textoBoton: "Quitar de favoritos"
+            })
+        }
+
+        let arrayFavoritosAString = JSON.stringify(arrayFavoritos)
+        localStorage.setItem('favoritos', arrayFavoritosAString)
+
+        console.log(localStorage)
+    }
+
+
+    render(){
+        return (
+            <article className='character-card'>
+                <img src={this.props.pelicula.poster_path} alt={this.props.original_title} />
+                
+                <button onClick={()=>this.agregarAFavoritos(this.props.pelicula.id)} className='link' type="button">{ this.state.textoBoton }</button>
+
+                <h2>{this.props.pelicula.title}</h2>
+                <p>{this.props.pelicula.overview}</p>
+                <p>{this.props.pelicula.release_date}</p>
+            </article>
+        )
+    }
+
 }
 
-export default TarjetaPelicula;
+export default TarjetaPersonaje;

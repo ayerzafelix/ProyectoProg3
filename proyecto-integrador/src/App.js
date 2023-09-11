@@ -23,12 +23,11 @@ function App() {
       <main>
         <Switch>
           <Route path='/' exact={true} component={Home} />
-          <Route path='/DetallePeliculas' exact={true} component={DetallePeliculas} />
+          <Route path='/DetallePeliculas/:id' exact={true} component={DetallePeliculas} />
           <Route path='/Favoritos' exact={true} component={Favoritos} />
           <Route path='/SearchResults' exact={true} component={SearchResults} />
           <Route path='/NotFound' exact={true} component={NotFound} />
           <Route path="/lista-peliculas" exact={true} component={ListaPeliculas} />
-          <Route path="/tarjeta-pelicula/:id" exact={true} component={TarjetaPelicula} />
         </Switch>
       </main>
       <Footer />
