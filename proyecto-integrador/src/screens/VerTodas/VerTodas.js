@@ -1,6 +1,6 @@
 import React from 'react';
 
-function VerMas() {
+function VerTodas() {
     return(
         <nav>
             <ul>
@@ -10,4 +10,4 @@ function VerMas() {
     )
 }
 
-export default VerMas
+export default VerTodas
