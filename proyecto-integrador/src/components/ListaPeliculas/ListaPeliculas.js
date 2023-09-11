@@ -29,8 +29,7 @@ class ListaPeliculas extends Component{
           <div>
             <h2>Lista de Películas</h2>
             <div className="pelicula-lista">
-              {peliculas.map(pelicula => (
-                <TarjetaPelicula key={pelicula.id} pelicula={pelicula} />
+              {peliculas.map(pelicula => (<TarjetaPelicula key={pelicula.id} pelicula={pelicula} />
               ))}
             </div>
           </div>
