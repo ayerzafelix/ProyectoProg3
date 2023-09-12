@@ -10,6 +10,7 @@ import DetallePeliculas from "./screens/DetallePeliculas/DetallePeliculas";
 import Error from "./components/Error/Error";
 import Favoritos from "./screens/Favoritos/Favoritos";
 import VerTodas from "./screens/VerTodas/VerTodas";
+//import Loading from "./components/Loading/Loading";
 
 
 
