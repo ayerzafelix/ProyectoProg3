@@ -11,13 +11,13 @@ class Favoritos extends Component{
     }
     componentDidMount(){
         let favoritos = [];
-        let recuperoStorage = localStorage.getItem('favoritos')
+        let recuperoStorage = (localStorage.getItem('favoritos'))
     
         if(recuperoStorage !== null){
             favoritos = JSON.parse(recuperoStorage) 
             let listaPeliculas = [];
             console.log(favoritos);
-            favoritos.forEach(Id => {
+            favoritos.map(Id => {
                 let url = `https://api.themoviedb.org/3/movie/${Id}?api_key=925f4b20191d3e6290b49bd816600eda&language=en-US`
                 fetch(url)
                     .then(response => response.json())

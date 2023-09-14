@@ -1,30 +1,27 @@
 import React, { Component } from "react";
-import TarjetaPelicula from "../TarjetaPelicula/TarjetaPelicula";
 import { Link } from "react-router-dom";
+
 class ListaPeliculas extends Component {
     constructor(props) {
         super(props);
         this.state = {
             peliculas: [],
             peliculasMasVistas: [],
-            verMas: false,
-            texto: "ver más"
         };
     }
 
     componentDidMount() {
         const apiUrl = "https://api.themoviedb.org/3/movie/popular?api_key=925f4b20191d3e6290b49bd816600eda&language=en-US&page=1";
 
-        // Realiza una solicitud GET a la API utilizando fetch
         fetch(apiUrl)
             .then((response) => response.json())
             .then((data) => {
-                // Actualiza el estado con los datos de la API
                 this.setState({ peliculas: data.results });
             })
             .catch((error) => {
                 console.error("Error al obtener los datos de la API:", error);
             });
+
         const apiUrlMasVistas = "https://api.themoviedb.org/3/movie/top_rated?api_key=925f4b20191d3e6290b49bd816600eda&language=en-US&page=1";
 
         fetch(apiUrlMasVistas)
@@ -36,18 +33,22 @@ class ListaPeliculas extends Component {
                 console.error("Error al obtener los datos de la API (Más Vistas):", error);
             });
     }
-    verMas(){
-        if (this.state.verMas === false) {
-            this.setState({
-                verMas: true,
-                texto: "ver menos"
+
+    verMas(peliculaId, esPopular) {
+        const key = esPopular ? "peliculas" : "peliculasMasVistas";
+        this.setState((prevState) => {
+            const updatedPeliculas = prevState[key].map((pelicula) => {
+                if (pelicula.id === peliculaId) {
+                    return {
+                        ...pelicula,
+                        verMas: !pelicula.verMas,
+                    };
+                }
+                return pelicula;
             });
-        } else {
-            this.setState({
-                verMas: false,
-                texto: "ver mas" 
-            })
-        }
+
+            return { [key]: updatedPeliculas };
+        });
     }
 
     render() {
@@ -60,11 +61,18 @@ class ListaPeliculas extends Component {
                     {peliculas.slice(0, 5).map((pelicula) => (
                         <div key={pelicula.id}>
                             <Link to={`/DetallePeliculas/${pelicula.id}`}>
-                            <img className="imagen" src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`} alt={pelicula.original_title} />
+                                <img className="imagen" src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`} alt={pelicula.original_title} />
                             </Link>
                             <h4>{pelicula.title}</h4>
                             <h5>{pelicula.release_date}</h5>
-                            <button onClick={()=> this.verMas()}>{this.state.texto}</button>
+                            {pelicula.verMas ? (
+                                <section>
+                                    <h4 className="overviewPeliculaDetalle"> Descripcion: {pelicula.overview} </h4>
+                                    <button className="boton-ver" onClick={() => this.verMas(pelicula.id, true)}>Ver menos</button>
+                                </section>
+                            ) : (
+                                <button className="boton-ver" onClick={() => this.verMas(pelicula.id, true)}> Ver mas</button>
+                            )}
                         </div>
                     ))}
                 </div>
@@ -74,11 +82,18 @@ class ListaPeliculas extends Component {
                     {peliculasMasVistas.slice(0, 5).map((pelicula) => (
                         <div key={pelicula.id}>
                             <Link to={`/DetallePeliculas/${pelicula.id}`}>
-                            <img className="imagen" src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`} alt={pelicula.original_title} />
+                                <img className="imagen" src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`} alt={pelicula.original_title} />
                             </Link>
                             <h4>{pelicula.title}</h4>
                             <h5>{pelicula.release_date}</h5>
-                            <button onClick={()=> this.verMas()}>{this.state.texto}</button>
+                            {pelicula.verMas ? (
+                                <section>
+                                    <h4 className="overviewPeliculaDetalle"> Descripcion: {pelicula.overview} </h4>
+                                    <button className="boton-ver" onClick={() => this.verMas(pelicula.id, false)}>Ver menos</button>
+                                </section>
+                            ) : (
+                                <button className="boton-ver" onClick={() => this.verMas(pelicula.id, false)}> Ver mas</button>
+                            )}
                         </div>
                     ))}
                 </div>
@@ -88,5 +103,3 @@ class ListaPeliculas extends Component {
 }
 
 export default ListaPeliculas;
-
-
