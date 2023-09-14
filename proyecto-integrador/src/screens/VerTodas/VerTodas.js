@@ -1,6 +1,6 @@
 import React from 'react';
 
-function NotFound() {
+function VerTodas() {
     return(
         <nav>
             <ul>
@@ -10,4 +10,4 @@ function NotFound() {
     )
 }
 
-export default NotFound
+export default VerTodas
