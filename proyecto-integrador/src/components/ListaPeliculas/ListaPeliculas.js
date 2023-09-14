@@ -58,25 +58,6 @@ class ListaPeliculas extends Component {
             <div>
                 <h2>Peliculas populares</h2>
                 <div className="lista-peliculas">
-<<<<<<< HEAD
-                    {peliculas.slice(0, 5).map((pelicula) => (
-                        <div key={pelicula.id}>
-                            <Link to={`/DetallePeliculas/${pelicula.id}`}>
-                                <img className="imagen" src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`} alt={pelicula.original_title} />
-                            </Link>
-                            <h4>{pelicula.title}</h4>
-                            <h5>{pelicula.release_date}</h5>
-                            {pelicula.verMas ? (
-                                <section>
-                                    <h4 className="overviewPeliculaDetalle"> Descripcion: {pelicula.overview} </h4>
-                                    <button className="boton-ver" onClick={() => this.verMas(pelicula.id, true)}>Ver menos</button>
-                                </section>
-                            ) : (
-                                <button className="boton-ver" onClick={() => this.verMas(pelicula.id, true)}> Ver mas</button>
-                            )}
-                        </div>
-                    ))}
-=======
 
 
                 {
@@ -102,7 +83,6 @@ class ListaPeliculas extends Component {
 
                 
                     
->>>>>>> 6e5505cd339fb15e994755aa65314f839597bfc6
                 </div>
 
                 <h2>Películas Más Vistas</h2>
