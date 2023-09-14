@@ -5,6 +5,7 @@ class DetallePeliculas extends Component {
     super(props);
     this.state = {
       pelicula: {},
+      textoBoton:'Agregar a Favoritos'
     };
   }
 
@@ -13,13 +14,51 @@ class DetallePeliculas extends Component {
     const apiUrl = `https://api.themoviedb.org/3/movie/${peliculaId}?api_key=925f4b20191d3e6290b49bd816600eda&language=en-US`;
     fetch(apiUrl)
       .then(response => response.json())
-      .then(data => { console.log(data);
+      .then((data) => {
         this.setState({ pelicula: data });
+        let recuperoStorage = localStorage.getItem('favoritos');
+        if (recuperoStorage !== null){
+        if(recuperoStorage.includes(this.props.data.id)){   
+            this.setState({
+                textoBoton: "Quitar de favoritos"
+            })
+        }
+    }
       })
       .catch(error => {
         console.error('Error al obtener los datos de la API:', error);
       });
   }
+  favoritos(id){
+    let arrayFavoritos = []
+    let recuperoStorage = localStorage.getItem('favoritos');
+    
+    if(recuperoStorage !== null){
+       arrayFavoritos = JSON.parse(recuperoStorage);   
+    }
+       
+    if(arrayFavoritos.includes(id)){
+        //Si el id está en el array queremos sacar el id.
+        arrayFavoritos = arrayFavoritos.filter( unId => unId !== id);
+
+        this.setState({
+            textoBoton: "Agregar a Favoritos"
+        })
+
+
+    } else {
+        arrayFavoritos.push(id);
+        this.setState({
+            textoBoton: "Quitar de favoritos"
+        })
+    }
+
+    //Subirlo a local storage stringifeado
+    let arrayFavoritosAString = JSON.stringify(arrayFavoritos)
+    localStorage.setItem('favoritos', arrayFavoritosAString)
+
+    console.log(localStorage)
+}
 
   render() {
     const { pelicula } = this.state;
@@ -34,6 +73,7 @@ class DetallePeliculas extends Component {
                 <h4 className="calificacionPeliculaDetalle">Fecha de estreno: {pelicula.release_date}</h4> 
                 <h4 className="calificacionPeliculaDetalle">Duracion: {pelicula.runtime} minutos</h4>
                 <h4 className="overviewPeliculaDetalle">Sinopsis: {pelicula.overview}</h4>
+                <button onClick={()=> this.favoritos(pelicula.id)}> {this.state.textoBoton}</button>
         </div>
       </div>
     );

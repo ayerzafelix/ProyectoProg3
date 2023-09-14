@@ -10,7 +10,7 @@ function Header() {
 
   return (
     <section>
-      <div className='navbar'>
+      <div className="navbar">
         <img src="/img/logo.png" alt="" className="logo" />
         <section className="barra">
           <form>
@@ -32,8 +32,16 @@ function Header() {
         </section>
         <nav>
           <ul className="inicio">
-            <li><a className="inicio" href="/">HOME</a></li>
-            <li><a className="inicio" href="/Favoritos">FAVORITOS</a></li>
+            <li>
+              <a className="inicio" href="/">
+                HOME
+              </a>
+            </li>
+            <li>
+              <a className="inicio" href="/Favoritos">
+                FAVORITOS
+              </a>
+            </li>
           </ul>
         </nav>
       </div>

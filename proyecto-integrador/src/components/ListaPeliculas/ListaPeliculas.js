@@ -7,6 +7,8 @@ class ListaPeliculas extends Component {
         this.state = {
             peliculas: [],
             peliculasMasVistas: [],
+            verMas: false,
+            texto: "ver más"
         };
     }
 
@@ -34,6 +36,19 @@ class ListaPeliculas extends Component {
                 console.error("Error al obtener los datos de la API (Más Vistas):", error);
             });
     }
+    verMas(){
+        if (this.state.verMas === false) {
+            this.setState({
+                verMas: true,
+                texto: "ver menos"
+            });
+        } else {
+            this.setState({
+                verMas: false,
+                texto: "ver mas" 
+            })
+        }
+    }
 
     render() {
         const { peliculas, peliculasMasVistas } = this.state;
@@ -49,6 +64,7 @@ class ListaPeliculas extends Component {
                             </Link>
                             <h4>{pelicula.title}</h4>
                             <h5>{pelicula.release_date}</h5>
+                            <button onClick={()=> this.verMas()}>{this.state.texto}</button>
                         </div>
                     ))}
                 </div>
@@ -62,6 +78,7 @@ class ListaPeliculas extends Component {
                             </Link>
                             <h4>{pelicula.title}</h4>
                             <h5>{pelicula.release_date}</h5>
+                            <button onClick={()=> this.verMas()}>{this.state.texto}</button>
                         </div>
                     ))}
                 </div>

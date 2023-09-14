@@ -28,7 +28,6 @@ function App() {
           <Route path='/SearchResults/:query' exact={true} component={SearchResults} />
           <Route path='/Categorias/:categoria' exact={true} component={VerTodas} />
           <Route path="" component={Error} />
-          
         </Switch>
       </main>
       <Footer />

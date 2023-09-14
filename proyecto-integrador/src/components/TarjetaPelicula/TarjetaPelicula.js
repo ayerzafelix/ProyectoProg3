@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class TarjetaPersonaje extends Component {
+class TarjetaPelicula extends Component {
 
     constructor(props){
         super(props)
@@ -60,17 +60,14 @@ class TarjetaPersonaje extends Component {
     render(){
         return (
             <article className='character-card'>
-                <img src={this.props.pelicula.poster_path} alt={this.props.original_title} />
-                
+                <img className="imagenPeliculaDetalle" src={`https://image.tmdb.org/t/p/w500${this.props.pelicula.poster_path}`} alt={this.props.pelicula.original_title} />
+                <h2 className="tituloPeliculaDetalle">{this.props.pelicula.title}</h2>
+                <h4 className="calificacionPeliculaDetalle">{this.props.pelicula.release_date}</h4>
                 <button onClick={()=>this.agregarAFavoritos(this.props.pelicula.id)} className='link' type="button">{ this.state.textoBoton }</button>
-
-                <h2>{this.props.pelicula.title}</h2>
-                <p>{this.props.pelicula.overview}</p>
-                <p>{this.props.pelicula.release_date}</p>
             </article>
         )
     }
 
 }
 
-export default TarjetaPersonaje;
+export default TarjetaPelicula;
