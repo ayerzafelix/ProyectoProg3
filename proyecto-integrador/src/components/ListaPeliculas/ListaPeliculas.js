@@ -58,6 +58,7 @@ class ListaPeliculas extends Component {
             <div>
                 <h2>Peliculas populares</h2>
                 <div className="lista-peliculas">
+<<<<<<< HEAD
                     {peliculas.slice(0, 5).map((pelicula) => (
                         <div key={pelicula.id}>
                             <Link to={`/DetallePeliculas/${pelicula.id}`}>
@@ -75,11 +76,49 @@ class ListaPeliculas extends Component {
                             )}
                         </div>
                     ))}
+=======
+
+
+                {
+
+                   peliculas.length === 0 ?
+                    <div>
+                        <img src="/img/Loadingbar.gif"/>
+                        <p>Cargando</p>
+                    </div>
+                 :
+
+
+                 peliculas.slice(0, 5).map((pelicula) => (
+                    <div key={pelicula.id}>
+                        <Link to={`/DetallePeliculas/${pelicula.id}`}>
+                        <img className="imagen" src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`} alt={pelicula.original_title} />
+                        </Link>
+                        <h4>{pelicula.title}</h4>
+                        <h5>{pelicula.release_date}</h5>
+                        <button onClick={()=> this.verMas()}>{this.state.texto}</button>
+                    </div>
+                ))}
+
+                
+                    
+>>>>>>> 6e5505cd339fb15e994755aa65314f839597bfc6
                 </div>
 
                 <h2>Películas Más Vistas</h2>
                 <div className="lista-peliculas">
-                    {peliculasMasVistas.slice(0, 5).map((pelicula) => (
+
+
+                {
+                   peliculas.length === 0 ?
+                    <div>
+                        <img src="/img/Loadingbar.gif"/>
+                        <p>Cargando</p>
+                    </div>
+                 :
+
+
+                    peliculasMasVistas.slice(0, 5).map((pelicula) => (
                         <div key={pelicula.id}>
                             <Link to={`/DetallePeliculas/${pelicula.id}`}>
                                 <img className="imagen" src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`} alt={pelicula.original_title} />
