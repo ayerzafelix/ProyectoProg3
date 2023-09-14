@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import TarjetaPelicula from "../../components/TarjetaPelicula/TarjetaPelicula"
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 class Favoritos extends Component{
     constructor(){
         super();
@@ -19,14 +18,15 @@ class Favoritos extends Component{
             console.log(favoritos);
             favoritos.map(Id => {
                 let url = `https://api.themoviedb.org/3/movie/${Id}?api_key=925f4b20191d3e6290b49bd816600eda&language=en-US`
-                fetch(url)
-                    .then(response => response.json())
-                    .then(data => listaPeliculas.push(data))
-                    .then(() => this.setState(
-                        {
-                            peliculas : listaPeliculas }
-                            
-                    ))
+                return(fetch(url)
+                .then(response => response.json())
+                .then(data => listaPeliculas.push(data))
+                .then(() => this.setState(
+                    {
+                        peliculas : listaPeliculas }
+                        
+                )))
+                
                     .catch(error => console.log('El error es' + error))
                   
             }) 
@@ -35,13 +35,17 @@ class Favoritos extends Component{
     }
     render(){
         return(
-            <section>
-                <h2>Películas Favoritas</h2>
-                   {this.state.peliculas.map((pelicula)=>{
-                    return(<TarjetaPelicula pelicula = {pelicula}></TarjetaPelicula>);
+            <div className='container'>
                 
-                   })}
-            </section>
+                    <h2>Películas Favoritas</h2>
+                       {this.state.peliculas.map((pelicula)=>{
+                        return(<div className='tarjeta'>
+                            <TarjetaPelicula pelicula = {pelicula}></TarjetaPelicula>
+                        </div>);
+                
+                       })}
+                
+            </div>
          )
     }
 }

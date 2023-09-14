@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import TarjetaPelicula from "../TarjetaPelicula/TarjetaPelicula";
+import TarjetaPeliculaTop from "../TarjetaPeliculaTop/TarjetaPeliculaTop";
 
 class ListaPeliculas extends Component {
     constructor(props) {
@@ -34,87 +35,55 @@ class ListaPeliculas extends Component {
             });
     }
 
-    verMas(peliculaId, esPopular) {
-        const key = esPopular ? "peliculas" : "peliculasMasVistas";
-        this.setState((prevState) => {
-            const updatedPeliculas = prevState[key].map((pelicula) => {
-                if (pelicula.id === peliculaId) {
-                    return {
-                        ...pelicula,
-                        verMas: !pelicula.verMas,
-                    };
-                }
-                return pelicula;
-            });
-
-            return { [key]: updatedPeliculas };
-        });
-    }
-
     render() {
         const { peliculas, peliculasMasVistas } = this.state;
 
         return (
             <div>
-                <h2>Peliculas populares</h2>
-                <div className="lista-peliculas">
+                <h1>Peliculas populares</h1>
+                <div className="container">
 
 
                 {
 
                    peliculas.length === 0 ?
                     <div>
-                        <img src="/img/Loadingbar.gif"/>
+                        <img src="/img/Loadingbar.gif" alt=""/>
                         <p>Cargando</p>
                     </div>
                  :
 
 
                  peliculas.slice(0, 5).map((pelicula) => (
-                    <div key={pelicula.id}>
-                        <Link to={`/DetallePeliculas/${pelicula.id}`}>
-                        <img className="imagen" src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`} alt={pelicula.original_title} />
-                        </Link>
-                        <h4>{pelicula.title}</h4>
-                        <h5>{pelicula.release_date}</h5>
-                        <button onClick={()=> this.verMas()}>{this.state.texto}</button>
+                    <div className="tarjeta">
+                        <TarjetaPelicula key={pelicula.id} pelicula={pelicula} />
                     </div>
                 ))}
 
                 
                     
                 </div>
-
-                <h2>Películas Más Vistas</h2>
-                <div className="lista-peliculas">
+                <br>
+                </br>
+                <br>
+                </br>
+                <br>
+                </br>
+                <h1>Películas Más Vistas</h1>
+                <div className="container">
 
 
                 {
-                   peliculas.length === 0 ?
+                   peliculasMasVistas.length === 0 ?
                     <div>
-                        <img src="/img/Loadingbar.gif"/>
+                        <img src="/img/Loadingbar.gif" alt=""/>
                         <p>Cargando</p>
                     </div>
-                 :
-
-
-                    peliculasMasVistas.slice(0, 5).map((pelicula) => (
-                        <div key={pelicula.id}>
-                            <Link to={`/DetallePeliculas/${pelicula.id}`}>
-                                <img className="imagen" src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`} alt={pelicula.original_title} />
-                            </Link>
-                            <h4>{pelicula.title}</h4>
-                            <h5>{pelicula.release_date}</h5>
-                            {pelicula.verMas ? (
-                                <section>
-                                    <h4 className="overviewPeliculaDetalle"> Descripcion: {pelicula.overview} </h4>
-                                    <button className="boton-ver" onClick={() => this.verMas(pelicula.id, false)}>Ver menos</button>
-                                </section>
-                            ) : (
-                                <button className="boton-ver" onClick={() => this.verMas(pelicula.id, false)}> Ver mas</button>
-                            )}
-                        </div>
-                    ))}
+                 :  peliculasMasVistas.slice(0, 5).map((pelicula) => (
+                    <div className="tarjeta">
+                        <TarjetaPeliculaTop key={pelicula.id} pelicula={pelicula} />
+                    </div>
+                ))}
                 </div>
             </div>
         );
@@ -122,3 +91,5 @@ class ListaPeliculas extends Component {
 }
 
 export default ListaPeliculas;
+
+

@@ -5,7 +5,8 @@ class DetallePeliculas extends Component {
     super(props);
     this.state = {
       pelicula: {},
-      textoBoton:'Agregar a Favoritos'
+      generos: [],
+      boton:'Agregar a Favoritos'
     };
   }
 
@@ -15,12 +16,14 @@ class DetallePeliculas extends Component {
     fetch(apiUrl)
       .then(response => response.json())
       .then((data) => {
-        this.setState({ pelicula: data });
+        this.setState({ 
+            pelicula: data,
+        generos: data.genres });
         let recuperoStorage = localStorage.getItem('favoritos');
         if (recuperoStorage !== null){
         if(recuperoStorage.includes(this.props.data.id)){   
             this.setState({
-                textoBoton: "Quitar de favoritos"
+                boton: "Quitar de favoritos"
             })
         }
     }
@@ -38,26 +41,22 @@ class DetallePeliculas extends Component {
     }
        
     if(arrayFavoritos.includes(id)){
-        //Si el id está en el array queremos sacar el id.
         arrayFavoritos = arrayFavoritos.filter( unId => unId !== id);
 
         this.setState({
-            textoBoton: "Agregar a Favoritos"
+            boton: "Agregar a Favoritos"
         })
 
 
     } else {
         arrayFavoritos.push(id);
         this.setState({
-            textoBoton: "Quitar de favoritos"
+            boton: "Quitar de favoritos"
         })
     }
 
-    //Subirlo a local storage stringifeado
     let arrayFavoritosAString = JSON.stringify(arrayFavoritos)
     localStorage.setItem('favoritos', arrayFavoritosAString)
-
-    console.log(localStorage)
 }
 
   render() {
@@ -73,7 +72,8 @@ class DetallePeliculas extends Component {
                 <h4 className="calificacionPeliculaDetalle">Fecha de estreno: {pelicula.release_date}</h4> 
                 <h4 className="calificacionPeliculaDetalle">Duracion: {pelicula.runtime} minutos</h4>
                 <h4 className="overviewPeliculaDetalle">Sinopsis: {pelicula.overview}</h4>
-                <button onClick={()=> this.favoritos(pelicula.id)}> {this.state.textoBoton}</button>
+                <ul>Generos: {this.state.generos.map((genero) => <li key={genero.name}>{genero.name}</li>)}</ul>
+                <button onClick={()=> this.favoritos(pelicula.id)}> {this.state.boton}</button>
         </div>
       </div>
     );

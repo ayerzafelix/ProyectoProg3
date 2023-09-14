@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-
-class TarjetaPelicula extends Component {
+class TarjetaPeliculaTop extends Component {
 
     constructor(props){
         super(props)
         this.state ={
             boton: "Agregar a favoritos",
-            favoritos: []
+            favoritos: [],
+            verMas: false,
 
         } 
     }
@@ -56,14 +56,19 @@ class TarjetaPelicula extends Component {
 
         console.log(localStorage)
     }
+    
+    verMas(){
+        this.setState((prevState) => ({
+            verMas: !prevState.verMas,
+        }));
+    }
 
     render(){
         return (
-            <article className='character-card'>
-                <Link to={`/DetallePeliculas/${this.props.pelicula.id}`}>
+            <article>
+               <Link to={`/DetallePeliculas/${this.props.pelicula.id}`}>
                 <img className="imagen" src={`https://image.tmdb.org/t/p/w500${this.props.pelicula.poster_path}`} alt={this.props.pelicula.original_title} />
                 </Link>
-                <h2>{this.props.pelicula.title}</h2>
                 <h4>{this.props.pelicula.release_date}</h4>
                 <button onClick={()=>this.agregarAFavoritos(this.props.pelicula.id)} className='link' type="button">{ this.state.boton }</button>
             </article>
@@ -72,4 +77,4 @@ class TarjetaPelicula extends Component {
 
 }
 
-export default TarjetaPelicula;
+export default TarjetaPeliculaTop;
