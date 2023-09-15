@@ -6,7 +6,7 @@ class ListaPeliculasPopulares extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            peliculasPopulares: [],
+            peliculasPopulares: []
          };
     }
 
@@ -26,6 +26,7 @@ class ListaPeliculasPopulares extends Component {
     render() {
         const {peliculasPopulares} = this.state;
         console.log("PRUEBA DE RENDERIZADO")
+        console.log(peliculasPopulares)
         return (
             <div>
                 <h1>Todas las Peliculas populares</h1>
@@ -36,9 +37,9 @@ class ListaPeliculasPopulares extends Component {
                         <p>Cargando...</p>
                     </div>
                  :
-                 peliculasPopulares.map((peliculaPopular) => (
+                 peliculasPopulares.map((pelicula) => (
                     <div className="tarjeta">
-                        <TarjetaPelicula key={peliculaPopular.id} peliculaPopular={peliculaPopular} />
+                        <TarjetaPelicula key={pelicula.id} pelicula={pelicula} />
                     </div>
                 ))}
                 </div>

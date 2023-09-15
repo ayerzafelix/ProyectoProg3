@@ -36,9 +36,9 @@ class ListaPeliculasMasVistas extends Component {
                         <p>Cargando...</p>
                     </div>
                  :
-                 peliculasMasVistas.map((peliculaMasVista) => (
+                 peliculasMasVistas.map((pelicula) => (
                     <div className="tarjeta">
-                        <TarjetaPelicula key={peliculaMasVista.id} peliculaMasVista={peliculaMasVista} />
+                        <TarjetaPelicula key={pelicula.id} pelicula={pelicula} />
                     </div>
                 ))}
                 </div>
