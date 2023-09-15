@@ -64,8 +64,9 @@ class DetallePeliculas extends Component {
     console.log(pelicula);
     return (
       <div>
-        <h2>Detalles de la Película</h2>
-        <div>
+        <h1>Detalles de la Película</h1>
+        <div className="contenedorCentral">
+        <div className="contenedorDetalles">
                 <img className="imagenPeliculaDetalle" src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`} alt={pelicula.original_title} />
                 <h2 className="tituloPeliculaDetalle">Titulo: {pelicula.title}</h2>
                 <h4 className="calificacionPeliculaDetalle">Rating {pelicula.vote_average}</h4>
@@ -74,6 +75,7 @@ class DetallePeliculas extends Component {
                 <h4 className="overviewPeliculaDetalle">Sinopsis: {pelicula.overview}</h4>
                 <ul>Generos: {this.state.generos.map((genero) => <li key={genero.name}>{genero.name}</li>)}</ul>
                 <button onClick={()=> this.favoritos(pelicula.id)}> {this.state.boton}</button>
+        </div>
         </div>
       </div>
     );

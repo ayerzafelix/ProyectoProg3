@@ -5,7 +5,7 @@ function PeliculasPopulares() {
   
     return (
         <section>
-                <ListaPeliculasPopulares />   
+                <ListaPeliculasPopulares /> 
         </section>
     )
 }
