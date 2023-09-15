@@ -64,12 +64,21 @@ class TarjetaPeliculaTop extends Component {
     }
 
     render(){
+        const { verMas } = this.state;
         return (
             <article>
                <Link to={`/DetallePeliculas/${this.props.pelicula.id}`}>
                 <img className="imagen" src={`https://image.tmdb.org/t/p/w500${this.props.pelicula.poster_path}`} alt={this.props.pelicula.original_title} />
                 </Link>
+                <h2 className="tituloPeliculaDetalle">{this.props.pelicula.title}</h2>
                 <h4>{this.props.pelicula.release_date}</h4>
+                <br></br>
+                { verMas && <h4>{this.props.pelicula.overview}</h4>}
+                <button onClick={() => this.verMas()} className='link' type="button">
+                    {verMas ? "Ver menos" : "Ver más"}
+                </button>
+                <br></br>
+                <br></br>
                 <button onClick={()=>this.agregarAFavoritos(this.props.pelicula.id)} className='link' type="button">{ this.state.boton }</button>
             </article>
         )
