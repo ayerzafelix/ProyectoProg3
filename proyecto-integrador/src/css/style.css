@@ -128,12 +128,28 @@ h1 {
     color: beige;
     padding-left: 2.7%;
 }
+
+.contenedorCentral {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin-top: -5vh;
+  }
   
+  .contenedorDetalles {
+    max-width: 90vw;
+    text-align: center;
+    border-radius: 5px;
+    padding: 20px;
+
+  }
 
   .imagenPeliculaDetalle {
     max-width: 300px;
     height: auto;
     border-radius: 5px;
+    border: 1px solid white;
   }
   
   .tituloPeliculaDetalle {
