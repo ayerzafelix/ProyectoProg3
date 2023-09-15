@@ -32,6 +32,8 @@ function Header() {
             </Link>
           </form>
         </section>
+
+        
         <nav>
           <ul className="inicio">
             <li>
@@ -44,6 +46,20 @@ function Header() {
                 FAVORITOS
               </a>
             </li>
+
+            <li>
+              <a className="inicio" href="/PeliculasPopularesScreen">
+                PELICULAS POPULARES
+              </a>
+            </li>
+
+            <li>
+              <a className="inicio" href="/MasVistasScreen">
+                MAS VISTAS
+              </a>
+            </li>
+
+
           </ul>
         </nav>
       </div>

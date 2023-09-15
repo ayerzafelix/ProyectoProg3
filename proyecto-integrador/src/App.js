@@ -2,6 +2,7 @@ import React from "react";
 
 import { Route } from 'react-router-dom'
 import { Switch } from 'react-router-dom'
+
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./screens/Home/Home";
@@ -10,7 +11,9 @@ import DetallePeliculas from "./screens/DetallePeliculas/DetallePeliculas";
 import Error from "./components/Error/Error";
 import Favoritos from "./screens/Favoritos/Favoritos";
 import VerTodas from "./screens/VerTodas/VerTodas";
-//import Loading from "./components/Loading/Loading";
+import MasVistasScreen from "./screens/MasVistasScreen/MasVistasScreen";
+import PeliculasPopularesScreen from "./screens/PeliculasPopularesScreen/PeliculasPopularesScreen";
+
 
 
 
@@ -28,6 +31,10 @@ function App() {
           <Route path='/SearchResults/:query' exact={true} component={SearchResults} />
           <Route path='/Categorias/:categoria' exact={true} component={VerTodas} />
           <Route path="" component={Error} />
+
+          <Route path='/MasVistasScreen' exact={true} component={MasVistasScreen} />
+          <Route path='/PeliculasPopularesScreen' component={PeliculasPopularesScreen} />
+          
         </Switch>
       </main>
       <Footer />
