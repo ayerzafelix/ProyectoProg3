@@ -247,6 +247,20 @@ margin-top: 8%;
     color: #fff;
   }
 
+  .filtrador{       
+    display: flex;
+    justify-content: center;
+  }
+
+  .filtrador input {
+    width: 300px; 
+    padding: 10px; 
+  }
+  .filtrador button {
+    width: 300px; 
+    padding: 10px;
+  }
+
 
 @media (max-width: 420px){
 

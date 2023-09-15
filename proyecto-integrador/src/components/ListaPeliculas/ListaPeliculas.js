@@ -61,7 +61,7 @@ class ListaPeliculas extends Component {
                 </br>
                 <br>
                 </br>
-                <h1>Películas Más Vistas</h1>
+                <h1>Películas más vistas</h1>
                 <div className="container">
 
                 {peliculasMasVistas.length === 0 ?

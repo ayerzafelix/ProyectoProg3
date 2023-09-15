@@ -54,8 +54,10 @@ class ListaPeliculasMasVistas extends Component {
         console.log("hola")
         return (
             <div>
-                <h1>Todas las Peliculas mas vistas</h1>
+                <h1>Todas las Peliculas más vistas</h1>
+                <div className = "filtrador">
                 <Filtro filtrador={(filtrar) => this.filtrador(filtrar)} />
+                </div>
                 <div className="container">
                 {peliculasMasVistas.length === 0 ?
                     <div>
@@ -69,8 +71,10 @@ class ListaPeliculasMasVistas extends Component {
                     </div>
                 ))}
                 </div>
+                <div className = "filtrador">
                 <button onClick={() => this.cargarMas()}> Cargar Mas ...  </button>
-            </div>
+                </div>
+                </div>
         )}
     }
        

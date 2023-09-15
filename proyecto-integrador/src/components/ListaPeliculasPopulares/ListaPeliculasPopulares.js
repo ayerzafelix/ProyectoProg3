@@ -56,7 +56,9 @@ class ListaPeliculasPopulares extends Component {
         return (
             <div>
                 <h1>Todas las Peliculas populares</h1>
+                <div className = "filtrador">
                 <Filtro filtrador={(filtrar) => this.filtrador(filtrar)} />
+                </div>
                 <div className="container">
                 {peliculasPopulares.length === 0 ?
                     <div>
@@ -70,7 +72,9 @@ class ListaPeliculasPopulares extends Component {
                     </div>
                 ))}
                 </div>
+                <div className = "filtrador">
                 <button onClick={() => this.cargarMas()}> Cargar Mas ...  </button>
+                </div>
             </div>
         )}
     }
