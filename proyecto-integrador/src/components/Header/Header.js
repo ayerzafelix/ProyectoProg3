@@ -11,7 +11,9 @@ function Header() {
   return (
     <section>
       <div className="navbar">
-        <img src="/img/logo.png" alt="" className="logo" />
+        <a href="/">
+          <img src="/img/logo.png" alt="" className="logo" />
+        </a>
         <section className="barra">
           <form>
             <input
