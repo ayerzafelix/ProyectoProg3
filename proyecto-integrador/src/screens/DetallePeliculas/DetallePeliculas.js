@@ -74,7 +74,7 @@ class DetallePeliculas extends Component {
                 <h4 className="calificacionPeliculaDetalle">Duracion: {pelicula.runtime} minutos</h4>
                 <h4 className="overviewPeliculaDetalle">Sinopsis: {pelicula.overview}</h4>
                 <ul>Generos: {this.state.generos.map((genero) => <li key={genero.name}>{genero.name}</li>)}</ul>
-                <button onClick={()=> this.favoritos(pelicula.id)}> {this.state.boton}</button>
+                <button onClick={()=> this.favoritos(pelicula.id)} className='link' type="button"> {this.state.boton}</button>
         </div>
         </div>
       </div>

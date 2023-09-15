@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import TarjetaPeliculaTop from "../TarjetaPeliculaTop/TarjetaPeliculaTop";
-
+import TarjetaPelicula from "../TarjetaPeliculaTop/TarjetaPeliculaTop";
+import Filtro from "../Filtro/Filtro";
 
 class ListaPeliculasPopulares extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            peliculasPopulares: []
+            peliculasPopulares: [],
+            popularFiltrado: [],
+            pages: ""
          };
     }
 
@@ -16,20 +18,43 @@ class ListaPeliculasPopulares extends Component {
         fetch(apiUrl)
             .then((response) => response.json())
             .then((data) => {
-                this.setState({ peliculasPopulares: data.results });
+                this.setState({ peliculasPopulares: data.results,
+                    popularFiltrado: data.results,
+                 pages: data.page});
             })
             .catch((error) => {
                 console.error("Error al obtener los datos de la API:", error);
             });
     }
 
+    cargarMas() {
+        const urlCargar = `https://api.themoviedb.org/3/movie/popular?api_key=925f4b20191d3e6290b49bd816600eda&language=en-US&page=${this.state.pages+1}`
+        fetch(urlCargar)
+          .then((res) => res.json())
+          .then((data) =>
+            this.setState({
+              peliculasPopulares: this.state.peliculasPopulares.concat(data.results),
+              popularFiltrado: this.state.peliculasPopulares.concat(data.results),
+              page: this.state.pages+1,
+            })
+          )
+          .catch(function(error){
+            console.log('el error fue: ' + error);
+          });
+          }
+          filtrador(filtrar){
+            let pelisFiltradas = this.state.peliculasPopulares.filter(pelicula => pelicula.title.toLowerCase().includes(filtrar.toLowerCase()))
+            this.setState({
+                popularFiltrado: pelisFiltradas,
+            })
+        }
+
     render() {
         const {peliculasPopulares} = this.state;
-        console.log("PRUEBA DE RENDERIZADO")
-        console.log(peliculasPopulares)
         return (
             <div>
                 <h1>Todas las Peliculas populares</h1>
+                <Filtro filtrador={(filtrar) => this.filtrador(filtrar)} />
                 <div className="container">
                 {peliculasPopulares.length === 0 ?
                     <div>
@@ -39,10 +64,11 @@ class ListaPeliculasPopulares extends Component {
                  :
                  peliculasPopulares.map((pelicula) => (
                     <div className="tarjeta">
-                        <TarjetaPeliculaTop key={pelicula.id} pelicula={pelicula} />
+                        <TarjetaPelicula key={pelicula.id} pelicula={pelicula} />
                     </div>
                 ))}
                 </div>
+                <button onClick={() => this.cargarMas()}> Cargar Mas ...  </button>
             </div>
         )}
     }
