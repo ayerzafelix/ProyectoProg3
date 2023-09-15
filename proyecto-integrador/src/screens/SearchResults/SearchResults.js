@@ -42,9 +42,13 @@ class SearchResults extends Component {
 
         return (
             <div>
-                <h1>Resultados de Búsqueda para "{query}":</h1>
                 <div className='container'>
-                       {this.state.peliculas.map((pelicula)=>{
+                       {this.state.peliculas.length === 0 ?
+                    <div>
+                        <h1>No se han encontrado resultados para "{query}":</h1>
+                    </div>
+                 :  
+                       this.state.peliculas.map((pelicula)=>{
                         return(<div className='tarjeta'>
                             <TarjetaPelicula pelicula = {pelicula}></TarjetaPelicula>
                         </div>);
