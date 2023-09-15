@@ -14,15 +14,12 @@ class Filtro extends Component{
         this.props.filtrador(value);
       }
       
-
     render(){
         return(
             <form >
                 <input value={this.state.value} onChange={(e)=>this.datosPopular(e)} type='text' placeholder='Filtrar por nombre' name="usuario"  />
                 <button type='submit'>Filtrar</button>
             </form>)
-
-
         }
 }
 
