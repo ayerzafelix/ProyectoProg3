@@ -38,7 +38,6 @@ li{
     flex-direction: row;
     flex-wrap: wrap;
     font-size: 1.1em;
-
 }
 
 .inicio:hover {
@@ -71,6 +70,7 @@ body {
     background-color: black;
     margin-top:8%;
     }
+
 /* Estilos para el contenedor de las tarjetas de películas */
 .container {
     display: flex;
@@ -80,8 +80,7 @@ body {
     gap: 20px; 
     margin-top: 1%;
     overflow-x: auto;
-  
-  }
+}
   
   /* Estilos para cada tarjeta de película */
   .tarjeta {
@@ -92,27 +91,26 @@ body {
     max-width: 250px;
     border-radius: 5px;
     margin-top: 2vh;
-  }
+}
   
   /* Estilos para la imagen de la película */
   .imagen {
     max-width: 100%; 
     height: auto;
     border-radius: 5px; 
-  }
+}
   
-
   h2 {
     margin: 10px 0;
     font-size: 1.2em;
     color: beige;
-  }
+}
   
   h4 {
     margin: 5px 0;
     font-size: 0.9em;
     color: beige;
-  }
+}
   
   .link {
     background-color: #007bff;
@@ -121,13 +119,12 @@ body {
     padding: 5px 10px;
     cursor: pointer;
     font-size: 0.9em;
-  }
+}
   
   .link:hover {
     background-color: #0056b3;
   }
   
-
 h1 {
     font-size: 30px;
     color: beige;
@@ -140,47 +137,46 @@ h1 {
     align-items: center;
     min-height: 100vh;
     margin-top: -5vh;
-  }
+}
   
   .contenedorDetalles {
     max-width: 90vw;
     text-align: center;
     border-radius: 5px;
     padding: 20px;
-
-  }
+}
 
   .imagenPeliculaDetalle {
     max-width: 300px;
     height: auto;
     border-radius: 5px;
     border: 1px solid white;
-  }
+}
   
   .tituloPeliculaDetalle {
     font-size: 24px;
     font-weight: bold;
     margin: 10px 0;
-  }
+}
   
   .calificacionPeliculaDetalle {
     font-size: 18px;
     margin: 5px 0;
-  }
+}
   
   .calificacionPeliculaDetalle:nth-of-type(2) {
     font-weight: bold;
-  }
+}
   
   .overviewPeliculaDetalle {
     font-size: 16px;
     margin: 10px 0;
-  }
+}
 
   ul{
     font-size: 20px;
     color: beige;
-  }
+}
   
 .nombres{
     text-decoration: none;
@@ -231,12 +227,12 @@ margin-top: 8%;
     align-items: center;
     height: 100vh;
     margin-top: -20vh;
-  }
+}
   
   .errorFoto img {
     max-width: 70%;
     max-height: 70%;
-  }
+}
 
   .volverahome{
     display: flex;
@@ -245,21 +241,21 @@ margin-top: 8%;
     margin-top: -15vh;
     font-size: 2em;
     color: #fff;
-  }
+}
 
   .filtrador{       
     display: flex;
     justify-content: center;
-  }
+}
 
   .filtrador input {
     width: 300px; 
     padding: 10px; 
-  }
+}
   .filtrador button {
     width: 300px; 
     padding: 10px;
-  }
+}
 
 
 @media (max-width: 420px){
@@ -336,7 +332,6 @@ margin-top: 8%;
         padding-bottom: 2%;
         font-size: 13px;
     }
-
 
 }
 

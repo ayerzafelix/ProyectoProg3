@@ -32,7 +32,6 @@ function Header() {
           </form>
         </section>
 
-        
         <nav>
           <ul className="inicio">
             <li>
@@ -57,8 +56,6 @@ function Header() {
               PELICULAS MÁS VISTAS
               </a>
             </li>
-
-
           </ul>
         </nav>
       </div>

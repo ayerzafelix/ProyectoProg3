@@ -13,11 +13,7 @@ import Favoritos from "./screens/Favoritos/Favoritos";
 import MasVistas from "./screens/MasVistas/MasVistas";
 import Populares from "./screens/Populares/Populares";
 
-
-
-
 function App() {
-
 
   return (
     <React.Fragment>
@@ -30,14 +26,12 @@ function App() {
           <Route path='/SearchResults/:query' exact={true} component={SearchResults} />
           <Route path='/MasVistas' exact={true} component={MasVistas} />
           <Route path='/PeliculasPopulares' exact={true} component={Populares} />
-          
           <Route path="" component={Error} />
-          
         </Switch>
       </main>
       <Footer />
-
     </React.Fragment>
   );
 }
+
 export default App

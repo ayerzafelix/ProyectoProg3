@@ -25,7 +25,6 @@ class TarjetaPelicula extends Component {
              })
            }    
         }
-
     }
 
     agregarAFavoritos(id){
@@ -75,13 +74,11 @@ class TarjetaPelicula extends Component {
                 <button onClick={() => this.verMas()} className='link' type="button">
                     {verMas ? "Ver menos" : "Ver más"}
                 </button>
-                <br></br>
-                <br></br>
+                <br></br><br></br>
                 <button onClick={()=>this.agregarAFavoritos(this.props.pelicula.id)} className='link' type="button">{ this.state.boton }</button>
             </article>
         )
     }
-
 }
 
 export default TarjetaPelicula;

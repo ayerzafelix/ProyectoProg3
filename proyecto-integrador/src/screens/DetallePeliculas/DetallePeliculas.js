@@ -47,7 +47,6 @@ class DetallePeliculas extends Component {
             boton: "Agregar a Favoritos"
         })
 
-
     } else {
         arrayFavoritos.push(id);
         this.setState({

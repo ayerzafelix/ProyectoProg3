@@ -26,10 +26,8 @@ class Favoritos extends Component{
                         peliculas : listaPeliculas }      
                 )))
                 
-                    .catch(error => console.log('El error es' + error))
-                  
-            }) 
-            
+                    .catch(error => console.log('El error es' + error))  
+            })  
         }
     }
 
@@ -52,7 +50,6 @@ class Favoritos extends Component{
                         <div className='tarjeta'>
                             <TarjetaPelicula pelicula = {pelicula}></TarjetaPelicula>
                         </div>);
-                
                        })}  
               </div>
               </div>

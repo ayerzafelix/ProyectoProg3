@@ -53,14 +53,10 @@ class ListaPeliculas extends Component {
                         <TarjetaPelicula key={pelicula.id} pelicula={pelicula} />
                     </div>
                 ))}
- 
                 </div>
-                <br>
-                </br>
-                <br>
-                </br>
-                <br>
-                </br>
+
+                <br></br><br></br><br></br>
+                
                 <h1>Películas más vistas</h1>
                 <div className="container">
 
