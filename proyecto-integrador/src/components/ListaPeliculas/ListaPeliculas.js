@@ -49,7 +49,7 @@ class ListaPeliculas extends Component {
                    peliculas.length === 0 ?
                     <div>
                         <img src="/img/Loadingbar.gif" alt=""/>
-                        <p>Cargando</p>
+                        <p>Cargando...</p>
                     </div>
                  :
 
@@ -77,7 +77,7 @@ class ListaPeliculas extends Component {
                    peliculasMasVistas.length === 0 ?
                     <div>
                         <img src="/img/Loadingbar.gif" alt=""/>
-                        <p>Cargando</p>
+                        <p>Cargando...</p>
                     </div>
                  :  peliculasMasVistas.slice(0, 5).map((pelicula) => (
                     <div className="tarjeta">
