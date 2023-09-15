@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Header() {
-  const [searchQuery, setSearchQuery] = useState(""); // Estado para almacenar la consulta de búsqueda
-
+  const [searchQuery, setSearchQuery] = useState(""); 
   const handleInputChange = (e) => {
     setSearchQuery(e.target.value);
   };
