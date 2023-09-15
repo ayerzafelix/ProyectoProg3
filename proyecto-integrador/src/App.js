@@ -11,8 +11,8 @@ import DetallePeliculas from "./screens/DetallePeliculas/DetallePeliculas";
 import Error from "./components/Error/Error";
 import Favoritos from "./screens/Favoritos/Favoritos";
 import VerTodas from "./screens/VerTodas/VerTodas";
-import MasVistasScreen from "./screens/MasVistasScreen/MasVistasScreen";
-import PeliculasPopularesScreen from "./screens/PeliculasPopularesScreen/PeliculasPopularesScreen";
+import MasVistas from "./screens/MasVistas/MasVistas";
+import PeliculasPopulares from "./screens/PeliculasPopulares/PeliculasPopulares";
 
 
 
@@ -32,8 +32,8 @@ function App() {
           <Route path='/Categorias/:categoria' exact={true} component={VerTodas} />
           <Route path="" component={Error} />
 
-          <Route path='/MasVistasScreen' exact={true} component={MasVistasScreen} />
-          <Route path='/PeliculasPopularesScreen' component={PeliculasPopularesScreen} />
+          <Route path='/MasVistas' exact={true} component={MasVistas} />
+          <Route path='/PeliculasPopulares' exact={true} component={PeliculasPopulares} />
           
         </Switch>
       </main>

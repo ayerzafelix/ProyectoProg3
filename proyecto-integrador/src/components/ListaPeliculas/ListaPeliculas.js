@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import TarjetaPelicula from "../TarjetaPelicula/TarjetaPelicula";
-import TarjetaPeliculaTop from "../TarjetaPeliculaTop/TarjetaPeliculaTop";
+
 
 class ListaPeliculas extends Component {
     constructor(props) {
@@ -43,25 +43,18 @@ class ListaPeliculas extends Component {
                 <h1>Peliculas populares</h1>
                 <div className="container">
 
-
-                {
-
-                   peliculas.length === 0 ?
+                {peliculas.length === 0 ?
                     <div>
                         <img src="/img/Loadingbar.gif" alt=""/>
                         <p>Cargando...</p>
                     </div>
                  :
-
-
                  peliculas.slice(0, 5).map((pelicula) => (
                     <div className="tarjeta">
                         <TarjetaPelicula key={pelicula.id} pelicula={pelicula} />
                     </div>
                 ))}
-
-                
-                    
+ 
                 </div>
                 <br>
                 </br>
@@ -72,24 +65,21 @@ class ListaPeliculas extends Component {
                 <h1>Películas Más Vistas</h1>
                 <div className="container">
 
-
-                {
-                   peliculasMasVistas.length === 0 ?
+                {peliculasMasVistas.length === 0 ?
                     <div>
                         <img src="/img/Loadingbar.gif" alt=""/>
                         <p>Cargando...</p>
                     </div>
                  :  peliculasMasVistas.slice(0, 5).map((pelicula) => (
                     <div className="tarjeta">
-                        <TarjetaPeliculaTop key={pelicula.id} pelicula={pelicula} />
+                        <TarjetaPelicula key={pelicula.id} pelicula={pelicula} />
                     </div>
                 ))}
                 </div>
             </div>
-        );
+        )}
     }
-}
-
+       
 export default ListaPeliculas;
 
 

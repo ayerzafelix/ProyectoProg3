@@ -49,8 +49,7 @@ class SearchResults extends Component {
                             <TarjetaPelicula pelicula = {pelicula}></TarjetaPelicula>
                         </div>);
                 
-                       })}
-                
+                       })}   
             </div>
             </div>
         );

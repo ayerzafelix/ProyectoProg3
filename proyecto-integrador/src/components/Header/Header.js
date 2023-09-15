@@ -48,7 +48,7 @@ function Header() {
             </li>
 
             <li>
-              <a className="inicio" href="/PeliculasPopularesScreen">
+              <a className="inicio" href="/PeliculasPopulares">
                 PELICULAS POPULARES
               </a>
             </li>

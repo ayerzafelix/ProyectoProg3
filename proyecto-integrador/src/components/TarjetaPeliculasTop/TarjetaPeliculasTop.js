@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
-class TarjetaPelicula extends Component {
+class TarjetaPeliculaTop extends Component {
 
     constructor(props){
         super(props)
         this.state ={
             boton: "Agregar a favoritos",
             favoritos: [],
-            verMas: false
+            verMas: false,
+
         } 
     }
 
@@ -56,11 +57,13 @@ class TarjetaPelicula extends Component {
 
         console.log(localStorage)
     }
+    
     verMas(){
         this.setState((prevState) => ({
             verMas: !prevState.verMas,
         }));
     }
+
     render(){
         const { verMas } = this.state;
         return (
@@ -84,4 +87,4 @@ class TarjetaPelicula extends Component {
 
 }
 
-export default TarjetaPelicula;
+export default TarjetaPeliculaTop;

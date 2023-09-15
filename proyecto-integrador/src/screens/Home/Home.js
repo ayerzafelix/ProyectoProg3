@@ -1,5 +1,6 @@
 import React from 'react';
 import ListaPeliculas from '../../components/ListaPeliculas/ListaPeliculas';
+
 function Home() {
   
     return (
