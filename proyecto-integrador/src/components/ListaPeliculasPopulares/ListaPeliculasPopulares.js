@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import TarjetaPeliculaTop from "../TarjetaPeliculaTop/TarjetaPeliculaTop";
-
+import TarjetaPelicula from "../TarjetaPelicula/TarjetaPelicula";
 
 class ListaPeliculasPopulares extends Component {
     constructor(props) {
@@ -39,7 +38,7 @@ class ListaPeliculasPopulares extends Component {
                  :
                  peliculasPopulares.map((pelicula) => (
                     <div className="tarjeta">
-                        <TarjetaPeliculaTop key={pelicula.id} pelicula={pelicula} />
+                        <TarjetaPelicula key={pelicula.id} pelicula={pelicula} />
                     </div>
                 ))}
                 </div>

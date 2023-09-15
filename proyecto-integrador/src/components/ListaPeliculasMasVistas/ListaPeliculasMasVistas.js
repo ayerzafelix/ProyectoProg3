@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import TarjetaPelicula from "../TarjetaPelicula/TarjetaPelicula";
 
-
 class ListaPeliculasMasVistas extends Component {
     constructor(props) {
         super(props);
