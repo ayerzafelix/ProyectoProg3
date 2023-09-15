@@ -35,16 +35,17 @@ class Favoritos extends Component{
     }
     render(){
         return(
-            <div className='container'>
-                
-                    <h2>Películas Favoritas</h2>
+            <div>
+            <h1>Películas Favoritas</h1>
+             <div className='container'>
                        {this.state.peliculas.map((pelicula)=>{
-                        return(<div className='tarjeta'>
+                        return(
+                        <div className='tarjeta'>
                             <TarjetaPelicula pelicula = {pelicula}></TarjetaPelicula>
                         </div>);
                 
-                       })}
-                
+                       })}  
+            </div>
             </div>
          )
     }

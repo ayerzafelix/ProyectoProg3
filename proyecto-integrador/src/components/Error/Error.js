@@ -5,17 +5,16 @@ import React from 'react'
     return (
       <div>
 
-            <h2>
+            <h1>
                 Error 404 Not Found
-            </h2>
+            </h1>
 
-            <img src="/img/error.png" className="errorfoto" />
+            <img src="/img/error.png" className="errorfoto" alt="error" />
 
             <br>
             </br>
             
-
-            <a class="volverahome" href="/">Haz click aquí para volver a home</a>
+            <a class="volverahome" href="/">Click aquí para volver a la pagina principal</a>
 
       </div>
     )
