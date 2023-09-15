@@ -25,7 +25,7 @@ class ListaPeliculasPopulares extends Component {
 
     render() {
         const {peliculasPopulares} = this.state;
-        console.log("hola")
+        console.log("PRUEBA DE RENDERIZADO")
         return (
             <div>
                 <h1>Todas las Peliculas populares</h1>
