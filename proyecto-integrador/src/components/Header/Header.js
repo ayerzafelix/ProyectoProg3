@@ -54,7 +54,7 @@ function Header() {
             </li>
 
             <li>
-              <a className="inicio" href="/MasVistasScreen">
+              <a className="inicio" href="/MasVistas">
               PELICULAS MÁS VISTAS
               </a>
             </li>

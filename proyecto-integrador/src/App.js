@@ -30,10 +30,12 @@ function App() {
           <Route path='/Favoritos' exact={true} component={Favoritos} />
           <Route path='/SearchResults/:query' exact={true} component={SearchResults} />
           <Route path='/Categorias/:categoria' exact={true} component={VerTodas} />
-          <Route path="" component={Error} />
+
 
           <Route path='/MasVistas' exact={true} component={MasVistas} />
           <Route path='/PeliculasPopulares' exact={true} component={PeliculasPopulares} />
+          
+          <Route path="" component={Error} />
           
         </Switch>
       </main>
