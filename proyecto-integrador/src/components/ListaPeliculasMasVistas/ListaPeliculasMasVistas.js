@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TarjetaPeliculaTop from "../TarjetaPelicula/TarjetaPelicula";
+import TarjetaPelicula from "../TarjetaPelicula/TarjetaPelicula";
 import Filtro from "../Filtro/Filtro";
 
 class ListaPeliculasMasVistas extends Component {
@@ -65,7 +65,7 @@ class ListaPeliculasMasVistas extends Component {
                  :
                  peliculasMasVistas.map((pelicula) => (
                     <div className="tarjeta">
-                        <TarjetaPeliculaTop key={pelicula.id} pelicula={pelicula} />
+                        <TarjetaPelicula key={pelicula.id} pelicula={pelicula} />
                     </div>
                 ))}
                 </div>

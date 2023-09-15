@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import TarjetaPelicula from "../TarjetaPelicula/TarjetaPelicula";
-import TarjetaPeliculaTop from "../TarjetaPeliculaTop/TarjetaPeliculaTop";
 
 class ListaPeliculas extends Component {
     constructor(props) {
@@ -72,7 +71,7 @@ class ListaPeliculas extends Component {
                     </div>
                  :  peliculasMasVistas.slice(0, 5).map((pelicula) => (
                     <div className="tarjeta">
-                        <TarjetaPeliculaTop key={pelicula.id} pelicula={pelicula} />
+                        <TarjetaPelicula key={pelicula.id} pelicula={pelicula} />
                     </div>
                 ))}
                 </div>
