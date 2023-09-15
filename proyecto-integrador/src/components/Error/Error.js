@@ -4,19 +4,13 @@ import React from 'react'
   function Error() {
     return (
       <div>
-
-            <h1>
-                Error 404 Not Found
-            </h1>
-
-            <img src="/img/error.png" className="errorfoto" alt="error" />
-
-            <br>
-            </br>
-            
-            <a class="volverahome" href="/">Click aquí para volver a la pagina principal</a>
-
+      <h1>Error 404 Not Found</h1>
+      <div className="errorFoto">
+        <img src="/img/error.png" alt="error" />
       </div>
+      <br />
+      <a className="volverahome" href="/">Click aquí para volver a la página principal</a>
+    </div>
     )
   }
 

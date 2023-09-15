@@ -23,8 +23,7 @@ class Favoritos extends Component{
                 .then(data => listaPeliculas.push(data))
                 .then(() => this.setState(
                     {
-                        peliculas : listaPeliculas }
-                        
+                        peliculas : listaPeliculas }      
                 )))
                 
                     .catch(error => console.log('El error es' + error))
@@ -33,11 +32,21 @@ class Favoritos extends Component{
             
         }
     }
+
     render(){
+        if (this.state.peliculas.length === 0){
         return(
             <div>
             <h1>Películas Favoritas</h1>
-             <div className='container'>
+            <br></br>
+            <br></br>
+            <h1>Todavia no tienes peliculas favoritas!</h1>
+            </div>)
+            }else{
+              return(
+              <div>
+              <h1>Películas Favoritas</h1>
+               <div className='container'>
                        {this.state.peliculas.map((pelicula)=>{
                         return(
                         <div className='tarjeta'>
@@ -45,10 +54,10 @@ class Favoritos extends Component{
                         </div>);
                 
                        })}  
-            </div>
-            </div>
+              </div>
+              </div>
          )
-    }
+    }}
 }
 export default Favoritos
 
