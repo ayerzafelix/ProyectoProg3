@@ -8,6 +8,7 @@ class ListaPeliculasMasVistas extends Component {
         this.state = {
             peliculasMasVistas: [],
             masVistasFiltrado: [],
+            masVistas2: [],
             pages: ""
          };
     }
@@ -20,6 +21,7 @@ class ListaPeliculasMasVistas extends Component {
             .then((data) => {
                 this.setState({ peliculasMasVistas: data.results,
                     masVistasFiltrado: data.results,
+                    masVistas2: data.results,
                     pages: data.page });
             })
             .catch((error) => {
@@ -41,13 +43,19 @@ class ListaPeliculasMasVistas extends Component {
             console.log('el error fue: ' + error);
           });
           }
-
+          filtrador(filtrar){
+            let pelisFiltradas = this.state.masVistas2.filter(pelicula => pelicula.title.toLowerCase().includes(filtrar.toLowerCase()))
+            this.setState({
+                peliculasMasVistas: pelisFiltradas,
+            })
+        }
     render() {
         const {peliculasMasVistas} = this.state;
         console.log("hola")
         return (
             <div>
                 <h1>Todas las Peliculas mas vistas</h1>
+                <Filtro filtrador={(filtrar) => this.filtrador(filtrar)} />
                 <div className="container">
                 {peliculasMasVistas.length === 0 ?
                     <div>

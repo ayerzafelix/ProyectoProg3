@@ -7,17 +7,20 @@ class Filtro extends Component{
             value:''
         }
     }
-
+    preventDefault(e){
+        e.preventDefault();
+        
+    }
     datosPopular(e) {
         const { value } = e.target;
-        this.setState({ value });
-        this.props.filtrador(value);
+        this.setState({ value },()=> this.props.filtrador(value));
+        ;
       }
       
 
     render(){
         return(
-            <form >
+            <form onSubmit={(e)=>this.preventDefault(e)}>
                 <input value={this.state.value} onChange={(e)=>this.datosPopular(e)} type='text' placeholder='Filtrar por nombre' name="usuario"  />
                 <button type='submit'>Filtrar</button>
             </form>)

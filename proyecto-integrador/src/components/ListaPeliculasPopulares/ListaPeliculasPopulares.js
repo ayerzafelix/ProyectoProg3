@@ -8,6 +8,7 @@ class ListaPeliculasPopulares extends Component {
         this.state = {
             peliculasPopulares: [],
             popularFiltrado: [],
+            populares2: [],
             pages: ""
          };
     }
@@ -20,7 +21,8 @@ class ListaPeliculasPopulares extends Component {
             .then((data) => {
                 this.setState({ peliculasPopulares: data.results,
                     popularFiltrado: data.results,
-                 pages: data.page});
+                 pages: data.page,
+                populares2: data.results});
             })
             .catch((error) => {
                 console.error("Error al obtener los datos de la API:", error);
@@ -43,9 +45,9 @@ class ListaPeliculasPopulares extends Component {
           });
           }
           filtrador(filtrar){
-            let pelisFiltradas = this.state.peliculasPopulares.filter(pelicula => pelicula.title.toLowerCase().includes(filtrar.toLowerCase()))
+            let pelisFiltradas = this.state.populares2.filter(pelicula => pelicula.title.toLowerCase().includes(filtrar.toLowerCase()))
             this.setState({
-                popularFiltrado: pelisFiltradas,
+                peliculasPopulares: pelisFiltradas,
             })
         }
 
